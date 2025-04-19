@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: lavender;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #4a4a4a;
+    z-index: 1;
+}
+
+.button-row{
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    z-index: 1;
+}
+
+#yesButton, #noButton{
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+#yesButton{
+    background-color: purple;
+}
+
+#noButton{
+    background-color: red;
+    position: absolute;
+    right: 80px;
+    top: 0;
+}
+
+/*Fireworks*/
+.firework{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    animation: explode 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes explode{
+    0%{
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/*Heart*/
+.heart{
+    width: 100px;
+    height: 90px;
+    position: relative;
+    transform: rotate(-45deg);
+    background: pink;
+    margin-top: 40px;
+    display: none;
+    z-index: 1;
+}
+
+.heart::before,
+.heart::after{
+    content: "";
+    width: 100px;
+    height: 90px;
+    position: absolute;
+    background: pink;
+    border-radius: 50%;
+}
+
+.heart::before{
+    top: 50px;
+    left: 0;
+}
+
+.heart::after{
+    left: 50px;
+    top: 0;
+}
+
+.firework{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 1000;
+    animation: pop 1s ease-out forwards;
+}
+
+@keyframes pop{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{ transform: scale(2);
+    opacity: 0;
+    }
+}
